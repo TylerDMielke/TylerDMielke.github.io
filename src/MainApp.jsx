@@ -5,6 +5,8 @@ import NavBarWithRouter from './components/NavBar';
 import Home from './components/Home';
 import endpoints from './constants/endpoints';
 
+const componentModules = import.meta.glob('./components/*.jsx');
+
 function MainApp() {
   const [data, setData] = useState(null);
 
@@ -26,7 +28,9 @@ function MainApp() {
             <Route exact path="/" component={Home} />
             {data
               && data.sections.map((route) => {
-                const SectionComponent = React.lazy(() => import('./components/' + route.component));
+                const SectionComponent = React.lazy(
+                  componentModules[`./components/${route.component}.jsx`],
+                );
                 return (
                   <Route
                     key={route.headerTitle}
