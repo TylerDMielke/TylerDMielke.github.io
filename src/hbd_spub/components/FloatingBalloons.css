@@ -1,0 +1,44 @@
+.hbd-spub-balloons {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hbd-spub-balloon {
+  position: absolute;
+  bottom: -10%;
+  animation-name: hbd-spub-float-up;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.hbd-spub-balloon-inner {
+  display: block;
+  font-size: 2.5rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.hbd-spub-balloon-inner:hover {
+  transform: scale(1.1);
+}
+
+.hbd-spub-balloon-popping {
+  transform: scale(1.6);
+  opacity: 0;
+}
+
+@keyframes hbd-spub-float-up {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(20px, -30vh); }
+  50% { transform: translate(-20px, -60vh); }
+  75% { transform: translate(20px, -90vh); }
+  100% { transform: translate(0, -120vh); }
+}
