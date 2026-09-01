@@ -1,0 +1,83 @@
+.hbd-spub-cake-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.hbd-spub-cake {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hbd-spub-candles {
+  display: flex;
+  gap: 16px;
+  margin-bottom: -6px;
+  z-index: 1;
+}
+
+.hbd-spub-candle {
+  position: relative;
+  width: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hbd-spub-candle:disabled {
+  cursor: default;
+}
+
+.hbd-spub-candle-stick {
+  width: 8px;
+  height: 32px;
+  border-radius: 2px;
+  background: repeating-linear-gradient(45deg, #fff, #fff 4px, #ff6fae 4px, #ff6fae 8px);
+}
+
+.hbd-spub-flame {
+  width: 10px;
+  height: 16px;
+  margin-bottom: 2px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle, #fff59d 0%, #ffb703 60%, #fb5607 100%);
+  animation: hbd-spub-flicker 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes hbd-spub-flicker {
+  from { transform: scale(1) rotate(-3deg); }
+  to { transform: scale(1.15) rotate(3deg); }
+}
+
+.hbd-spub-cake-tier {
+  border-radius: 12px 12px 4px 4px;
+}
+
+.hbd-spub-cake-tier-top {
+  width: 160px;
+  height: 40px;
+  background: #ff8fa3;
+}
+
+.hbd-spub-cake-tier-bottom {
+  width: 220px;
+  height: 60px;
+  margin-top: -4px;
+  background: #ff6f91;
+}
+
+.hbd-spub-wish-text {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
